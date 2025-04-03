@@ -9,15 +9,20 @@ Visão Geral
 --
 A solução é composta por três componentes principais:
  ✅ AWS Lambda → Função responsável por iniciar ou parar os recursos conforme as regras.
+ 
  ✅ Amazon EventBridge → Regras programadas que acionam a função Lambda nos horários definidos.
- ✅ Tags nos Recursos → Permitem definir quais instâncias devem ser iniciadas ou paradas automaticamente.
+ 
+ ✅ Tags nos Recursos → Permitem definir quais instâncias devem ser iniciadas ou paradas automaticamente.
 ---
 Configuração da Solução
 1. Configuração do AWS Lambda
-Criamos uma função Lambda em Python utilizando o boto3 para interagir com os serviços da AWS. O código:
+Criamos uma função Lambda em Python utilizando o boto3 para interagir com os serviços da AWS.
+O código:
  ✅ Verifica o status do recurso.
+
  ✅ Decide se deve iniciar ou parar a instância com base nas tags atribuídas.
- ✅ Gera logs para monitoramento.
+
+ ✅ Gera logs para monitoramento.
 
 
 3. Configuração do EventBridge
@@ -67,6 +72,7 @@ Para que a função Lambda consiga iniciar e parar instâncias, ela precisa de u
 
 
 ✅ Para melhorar a segurança, substitua * pelo ARN das instâncias específicas que você deseja controlar.
+
 ✅ Crie uma Role IAM com essa política e anexe-a à função Lambda.
 
 ---
